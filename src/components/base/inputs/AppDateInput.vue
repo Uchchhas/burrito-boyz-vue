@@ -117,7 +117,7 @@
             :for="id"
             :class="[
                 `text-b6 font-semibold text-dark uppercase bg-white`,
-                {'text-error': errorMessage}
+                {'text-danger': errorMessage}
             ]">
             {{ label }}
         </label>
@@ -132,7 +132,7 @@
                 :multi-calendars="range"
                 :position="range ? 'right' : menuPosition"
                 :hide-input-icon="hideInputIcon"
-                :input-class-name="`${formControlSizeClass} ${formControlClass} !rounded ${range ? 'w-[195px] px-[15px] leading-[34px] text-center' : ''} ${hideInputIcon ? '' : 'pl-8'} ${hideClearIcon ? 'hide-clear-icon' : ''} ${errorMessage ? '!border-error focus:!border-error' : '!border-grey focus:border-primary'}`"
+                :input-class-name="`${formControlSizeClass} ${formControlClass} !rounded ${range ? 'w-[195px] px-[15px] leading-[34px] text-center' : ''} ${hideInputIcon ? '' : 'pl-8'} ${hideClearIcon ? 'hide-clear-icon' : ''} ${errorMessage ? '!border-danger focus:!border-danger' : '!border-grey focus:border-primary'}`"
                 :menu-class-name="`${range || menuPosition === 'right' ? 'dp--menu-wrapper_right' : null} ${monthPicker ? 'dp--menu-wrapper_month' : null}`"
                 calendar-cell-class-name="text-b4"
                 :placeholder="placeholder"

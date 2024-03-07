@@ -219,7 +219,7 @@
             v-if="label"
             :class="[
                     `absolute z-10 left-4 top-[-9px] px-0.5 text-b6 font-semibold text-dark uppercase bg-white`,
-                    {'text-error': errorMessage}
+                    {'text-danger': errorMessage}
                 ]">
             {{ label }}
         </label>
@@ -232,7 +232,7 @@
                         formControlSizeClass,
                         formControlClass,
                         modelValue.length ? 'text-dark' : 'text-placeholder',
-                        errorMessage ? 'border-error focus:border-error' : 'border-grey focus:border-grey',
+                        errorMessage ? 'border-danger focus:border-danger' : 'border-grey focus:border-grey',
                         {'pr-12': multiselect}
                     ]"
                 @click="toggleSelectMenu($event)"

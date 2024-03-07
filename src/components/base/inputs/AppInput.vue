@@ -215,8 +215,8 @@
                 v-if="label"
                 :for="id"
                 :class="[
-                    `absolute left-4 top-[-9px] px-0.5 text-b6 font-semibold text-dark uppercase bg-white`,
-                    {'text-error': errorMessage}
+                    `mb-[6px] text-b5 font-semibold text-grey-200 capitalize bg-white`,
+                    {'text-danger': errorMessage}
                 ]">
                 {{ label }}
             </label>
@@ -231,7 +231,7 @@
                     formControlSizeClass,
                     formControlClass,
                     readOnly ? 'text-mid border-lighter focus:!border-lighter bg-background' : '',
-                    errorMessage ? 'border-error focus:border-error' : 'border-grey focus:border-primary'
+                    errorMessage ? 'border-danger focus:border-danger' : 'border-off-white-400 focus:border-primary'
                 ]"
             />
             <span
@@ -271,7 +271,7 @@
                 :for="id"
                 :class="[
                     `absolute left-4 top-[-9px] px-0.5 text-b6 font-semibold text-dark uppercase bg-white`,
-                    {'text-error': errorMessage}
+                    {'text-danger': errorMessage}
                 ]">
                 {{ label }}
             </label>
@@ -286,7 +286,7 @@
                     formControlSizeClass,
                     formControlClass,
                     readOnly ? 'text-mid border-lighter focus:!border-lighter bg-background' : '',
-                    errorMessage ? 'border-error focus:border-error' : 'border-grey focus:border-primary'
+                    errorMessage ? 'border-danger focus:border-danger' : 'border-grey focus:border-primary'
                 ]"
                 @input="handlePhoneInput"
             />

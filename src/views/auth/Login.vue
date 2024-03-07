@@ -44,11 +44,21 @@
 </script>
 
 <template>
-    <div class="overflow-hidden bg-white prose">
+    <div class="overflow-hidden bg-white prose bg-[url('/images/background-auth.jpg')] bg-no-repeat bg-center">
         <div class="min-h-screen grid place-items-center">
-            <div class="w-full max-w-[410px] p-8 rounded-lg border border-lighter shadow-xl">
-                <header class="mb-8 flex justify-center">
-                    <img src="/images/logo.svg" alt="Logo">
+            <div class="w-full max-w-[500px] py-12 px-10 rounded-xl shadow-custom-1">
+                <header class="mb-8">
+                    <div class="flex justify-center">
+                        <img
+                            width="262"
+                            height="40"
+                            src="/images/logo.svg"
+                            class=" mb-12"
+                            alt="Logo"
+                        />
+                    </div>
+                    <h3 class="mb-3">Welcome back</h3>
+                    <h2 class="mb-10">Let’s Login to Your Account</h2>
                 </header>
                 <div class="">
                     <Form
@@ -72,7 +82,7 @@
                             placeholder="Password"
                             v-model="formData.password"
                         />
-                        <p class="text-b6 mt-[0] mb-3 text-error"
+                        <p class="text-b6 mt-[0] mb-3 text-danger"
                            v-if="![401,422].includes(errorStore.errorCode) && errorStore.errorMessage">
                             {{ errorStore.errorMessage }}</p>
                         <router-link to="/auth/forgot-password"

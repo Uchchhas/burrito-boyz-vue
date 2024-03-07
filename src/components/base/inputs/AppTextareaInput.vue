@@ -80,7 +80,7 @@
             :for="id"
             :class="[
                 `text-b6 font-semibold text-dark uppercase bg-white`,
-                {'text-error': errorMessage}
+                {'text-danger': errorMessage}
             ]">
             {{ label }}
         </label>
@@ -94,7 +94,7 @@
                 formControlSizeClass,
                 formControlClass,
                 readOnly ? 'text-mid border-lighter focus:!border-lighter bg-background' : '',
-                errorMessage ? 'border-error focus:border-error' : 'border-grey focus:border-primary'
+                errorMessage ? 'border-danger focus:border-danger' : 'border-grey focus:border-primary'
             ]"
         />
         <app-input-error :error-message="errorMessage"/>
