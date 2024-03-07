@@ -1,3 +1,3 @@
 <template>
-    <router-view/>
+    Not Found
 </template>
