@@ -3,22 +3,15 @@
     import {useRouter} from 'vue-router';
     import {Form} from 'vee-validate';
     import {loginSchema} from '@/config/validationSchema.js';
-    import AppInput from '@/components/base/inputs/AppInput.vue';
     import {useAuthStore, useErrorStore} from '@/stores';
-    import AppButton from "@/components/base/AppButton.vue";
+    import AppInput from '@/components/base/inputs/AppInput.vue';
+    import AppButton from '@/components/base/AppButton.vue';
 
     const authStore = useAuthStore();
     const errorStore = useErrorStore();
 
     // Define routes object
     const router = useRouter();
-
-    onBeforeMount(async () => {
-        await authStore.authorize();
-        if (!errorStore.errorCode) {
-            router.push({name: 'dashboard'});
-        }
-    });
 
     // Data
     const loading = ref(false);
@@ -35,13 +28,21 @@
         loading.value = false;
 
         if (!errorStore.errorCode) {
-            router.push({name: "dashboard"});
+            router.push({name: 'dashboard'});
         }
 
         if (errorStore.errorCode === 422) {
             actions.setErrors(errorStore.formErrors);
         }
     }
+
+    // Lifecycle hooks
+    onBeforeMount(async () => {
+        await authStore.authorize();
+        if (!errorStore.errorCode) {
+            router.push({name: 'dashboard'});
+        }
+    });
 </script>
 
 <template>

@@ -38,8 +38,8 @@ export default {
             b1: ['18px', {lineHeight: '28px'}],
             b2: ['16px', {lineHeight: '26px'}],
             b3: ['15px', {lineHeight: '24px'}],
-            b4: ['14px', {lineHeight: '20px'}],
-            b5: ['13px', {lineHeight: '20px'}],
+            b4: ['14px', {lineHeight: '22px'}],
+            b5: ['13px', {lineHeight: '21px'}],
             b6: ['12px', {lineHeight: '18px'}],
             h1: ['36px', {lineHeight: '46px'}],
             h2: ['28px', {lineHeight: '42px'}],
@@ -92,6 +92,16 @@ export default {
         }),
         fontFamily: {
             sans: ["'Inter', sans-serif"],
+        },
+        container: {
+            center: true,
+            screens: {
+                sm: '600px',
+                md: '728px',
+                lg: '984px',
+                xl: '1240px',
+                '2xl': '1328px',
+            },
         },
         extend: {
             boxShadow: {
