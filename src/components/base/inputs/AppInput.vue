@@ -89,7 +89,7 @@
         },
         formGroupClass: {
             type: String,
-            default: 'relative w-full mb-8 group'
+            default: 'relative w-full mb-5 group'
         },
         menuPosition: {
             type: String,
@@ -172,11 +172,11 @@
         } else if (props.inputSize === 'xs-small') {
             return 'h-[31px] px-2.5 py-1 text-b4'
         } else {
-            return `${props.type === 'textarea' ? 'h-32' : 'h-11'} pl-4 ${props.type === 'password' ? 'pr-10' : 'pr-4'} text-b2`
+            return `${props.type === 'textarea' ? 'h-32' : 'h-[46px]'} pl-[14] ${props.type === 'password' ? 'pr-10' : 'pr-[14]'} text-b4`
         }
     });
     const formControlClass = computed(() => {
-        return 'w-full border rounded placeholder:text-placeholder text-dark focus:ring-transparent focus-visible:outline-none'
+        return 'w-full font-medium border rounded-[6px] placeholder:text-placeholder text-dark focus:ring-transparent focus-visible:outline-none focus:shadow-input'
     });
 
     // Methods
@@ -215,7 +215,7 @@
                 v-if="label"
                 :for="id"
                 :class="[
-                    `mb-[6px] text-b5 font-semibold text-grey-200 capitalize bg-white`,
+                    `mb-[6px] block text-b5 font-semibold text-grey-200 capitalize bg-white`,
                     {'text-danger': errorMessage}
                 ]">
                 {{ label }}
@@ -231,7 +231,7 @@
                     formControlSizeClass,
                     formControlClass,
                     readOnly ? 'text-mid border-lighter focus:!border-lighter bg-background' : '',
-                    errorMessage ? 'border-danger focus:border-danger' : 'border-off-white-400 focus:border-primary'
+                    errorMessage ? 'border-danger focus:border-danger' : 'border-off-white-400 focus:border-info'
                 ]"
             />
             <span
@@ -270,7 +270,7 @@
                 v-if="label"
                 :for="id"
                 :class="[
-                    `absolute left-4 top-[-9px] px-0.5 text-b6 font-semibold text-dark uppercase bg-white`,
+                    `mb-[6px] block text-b5 font-semibold text-grey-200 capitalize bg-white`,
                     {'text-danger': errorMessage}
                 ]">
                 {{ label }}
@@ -286,7 +286,7 @@
                     formControlSizeClass,
                     formControlClass,
                     readOnly ? 'text-mid border-lighter focus:!border-lighter bg-background' : '',
-                    errorMessage ? 'border-danger focus:border-danger' : 'border-grey focus:border-primary'
+                    errorMessage ? 'border-danger focus:border-danger' : 'border-grey focus:border-info'
                 ]"
                 @input="handlePhoneInput"
             />

@@ -95,7 +95,9 @@ export default {
         },
         extend: {
             boxShadow: {
-                'custom-1': '0px 10px 40px 0px #191C261A'
+                'custom-1': '0px 10px 40px 0px #191C261A',
+                'btn-primary': '0px 3px 20px 0px #EF8F0080',
+                'input': '0px 0px 3px 0px #3759D180',
             }
         },
     },

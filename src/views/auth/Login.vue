@@ -5,6 +5,7 @@
     import {loginSchema} from '@/config/validationSchema.js';
     import AppInput from '@/components/base/inputs/AppInput.vue';
     import {useAuthStore, useErrorStore} from '@/stores';
+    import AppButton from "@/components/base/AppButton.vue";
 
     const authStore = useAuthStore();
     const errorStore = useErrorStore();
@@ -46,14 +47,14 @@
 <template>
     <div class="overflow-hidden bg-white prose bg-[url('/images/background-auth.jpg')] bg-no-repeat bg-center">
         <div class="min-h-screen grid place-items-center">
-            <div class="w-full max-w-[500px] py-12 px-10 rounded-xl shadow-custom-1">
+            <div class="w-full max-w-[500px] py-12 px-10 rounded-xl border border-off-white-200 shadow-custom-1">
                 <header class="mb-8">
                     <div class="flex justify-center">
                         <img
                             width="262"
                             height="40"
                             src="/images/logo.svg"
-                            class=" mb-12"
+                            class="mb-12"
                             alt="Logo"
                         />
                     </div>
@@ -80,20 +81,29 @@
                             name="password"
                             label="Password"
                             placeholder="Password"
+                            form-group-class="relative mb-2"
                             v-model="formData.password"
                         />
-                        <p class="text-b6 mt-[0] mb-3 text-danger"
-                           v-if="![401,422].includes(errorStore.errorCode) && errorStore.errorMessage">
-                            {{ errorStore.errorMessage }}</p>
-                        <router-link to="/auth/forgot-password"
-                                     class="text-b2 text-mid font-medium hover:text-teal">
-                            Forgot Password?
-                        </router-link>
-                        <button
-                            type="submit"
-                            class="rounded-md bg-primary px-3.5 py-3 text-b4 font-semibold text-white shadow-sm hover:bg-primary-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-dark transition">
-                            Sign in
-                        </button>
+                        <div class="mb-10 text-right">
+                            <router-link
+                                to="/auth/forgot-password"
+                                class="text-b4 text-info font-semibold hover:text-teal"
+                            >
+                                Forgot Password?
+                            </router-link>
+                        </div>
+                        <p
+                            v-if="![401,422].includes(errorStore.errorCode) && errorStore.errorMessage"
+                            class="text-b6 mt-[0] mb-3 text-danger"
+                        >
+                            {{ errorStore.errorMessage }}
+                        </p>
+                        <app-button
+                            button-type="submit"
+                            button-size="large"
+                            title="Login"
+                            full-width
+                        />
                     </Form>
                 </div>
             </div>
